@@ -11,13 +11,13 @@ void lcd_test(void)
 	unsigned short *p;
 	// unsigned int *p2;
 		
-	/* ³õÊ¼»¯LCD */
+	/* åˆå§‹åŒ–LCD */
 	lcd_init();
 
-	/* Ê¹ÄÜLCD */
+	/* ä½¿èƒ½LCD */
 	lcd_enable();
 
-	/* »ñµÃLCDµÄ²ÎÊı: fb_base, xres, yres, bpp */
+	/* è·å¾—LCDçš„å‚æ•°: fb_base, xres, yres, bpp */
 	get_lcd_params(&fb_base, &xres, &yres, &bpp);
 	fb_get_lcd_params();
 	font_init();
@@ -28,12 +28,11 @@ void lcd_test(void)
 		for (y = 0; y < yres; y++)
 			*p++ = 0x0000;
 
-//revise ´óÍ·ÕÕ
+//revise å¤§å¤´ç…§
 	draw_picture(0, 0, 270,270 ,&myprofile);
-	/* Êä³öÎÄ×Ö */
+	/* è¾“å‡ºæ–‡å­— */
 	// fb_print_string(10, 10, "www.100ask.net\n\r100ask.taobao.com", 0xff00);
 	fb_print_cnstring(280, 10,string, 0xffe0);
-	fb_print_string(280, 26, "2019112037", 0xff00);
 	fb_print_string(280, 42, "2552866132@qq.com", 0xff00);
 	fb_print_string(280, 58, "Small & Beautiful", 0xff00);
 
